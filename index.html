@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Complexidade de Pesquisa Clínica</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Calculadora de Complexidade de Pesquisa Clínica</h1>
+        <form id="complexidadeForm" class="mt-4">
+            <div class="form-group">
+                <label for="perfilPaciente">Perfil do paciente:</label>
+                <select id="perfilPaciente" class="form-control">
+                    <option value="baixo risco">Baixo risco</option>
+                    <option value="médio risco">Médio risco</option>
+                    <option value="alto risco">Alto risco</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="duracaoEnsaio">Duração do ensaio clínico:</label>
+                <select id="duracaoEnsaio" class="form-control">
+                    <option value="menor de 1 ano">Menor de 1 ano</option>
+                    <option value="entre 1 e 2 anos">Entre 1 e 2 anos</option>
+                    <option value="acima de 2 anos">Acima de 2 anos</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="delineamentoEnsaio">Delineamento do ensaio clínico:</label>
+                <select id="delineamentoEnsaio" class="form-control">
+                    <option value="observacional">Observacional</option>
+                    <option value="de intervenção">De intervenção</option>
+                    <option value="não se aplica">Não se aplica</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="viaAdministracao">Via de administração do Produto Investigacional:</label>
+                <select id="viaAdministracao" class="form-control">
+                    <option value="oral">Oral</option>
+                    <option value="subcutâneo/intramuscular">Subcutâneo/Intramuscular</option>
+                    <option value="endovenoso ou auto administração">Endovenoso ou Auto administração</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="complexidadeProcedimentos">Complexidade dos procedimentos:</label>
+                <select id="complexidadeProcedimentos" class="form-control">
+                    <option value="somente no centro (coleta de sangue, swab)">Somente no centro (coleta de sangue, swab)</option>
+                    <option value="ecg, laboratório local (pasteur, clementino)">ECG, Laboratório local (Pasteur, Clementino)</option>
+                    <option value="exames de imagem, biópsia">Exames de imagem, Biópsia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="elaboracaoTemplates">Elaboração de templates:</label>
+                <select id="elaboracaoTemplates" class="form-control">
+                    <option value="até 10 páginas">Até 10 páginas</option>
+                    <option value="de 10 a 20 páginas">De 10 a 20 páginas</option>
+                    <option value="acima de 20 páginas">Acima de 20 páginas</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tempoPreenchimentoCrf">Tempo de Preenchimento CRF:</label>
+                <select id="tempoPreenchimentoCrf" class="form-control">
+                    <option value="até 30 min">Até 30 min</option>
+                    <option value="de 30 min a 1h">De 30 min a 1h</option>
+                    <option value="acima de 1h">Acima de 1h</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="periodicidadePreenchimentoCrf">Periodicidade de preenchimento de CRF:</label>
+                <select id="periodicidadePreenchimentoCrf" class="form-control">
+                    <option value="único / semestral">Único / Semestral</option>
+                    <option value="mensal / trimestral">Mensal / Trimestral</option>
+                    <option value="semanal">Semanal</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tempoResolucaoQueries">Tempo de resolução de queries:</label>
+                <select id="tempoResolucaoQueries" class="form-control">
+                    <option value="até 30 min">Até 30 min</option>
+                    <option value="de 30 min a 1h">De 30 min a 1h</option>
+                    <option value="acima de 1h">Acima de 1h</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="statusCentroPesquisa">Status do centro de pesquisa:</label>
+                <select id="statusCentroPesquisa" class="form-control">
+                    <option value="não se aplica">Não se aplica</option>
+                    <option value="participante">Participante</option>
+                    <option value="coordenador">Coordenador</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comprometimentoPi">Comprometimento do P.I.:</label>
+                <select id="comprometimentoPi" class="form-control">
+                    <option value="muito disponível (atende demandas no prazo)">Muito disponível (atende demandas no prazo)</option>
+                    <option value="moderadamente disponível">Moderadamente disponível</option>
+                    <option value="pouco disponível">Pouco disponível</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Calcular Complexidade</button>
+        </form>
+        <div id="resultado" class="mt-4 text-center"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
